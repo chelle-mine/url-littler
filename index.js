@@ -44,7 +44,10 @@ app.get('/new/*', (req, res) => {
 
             // return doc directly if found
             else if (doc) {
-                res.end(JSON.stringify(doc));
+                res.end(JSON.stringify({
+                    original_url: doc.original_url,
+                    little_url: req.protocol + '://' + req.get('host') + '/' + doc.little_url
+                }));
             }
 
             // create document then return object
@@ -55,7 +58,7 @@ app.get('/new/*', (req, res) => {
 
                     res.end(JSON.stringify({
                         original_url: orig,
-                        little_url: littled
+                        little_url: req.protocol + '://' + req.get('host') + '/' + littled
                     }));
                 });
             }

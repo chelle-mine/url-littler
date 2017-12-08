@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    style.
+      code {
+        background-color: #ececec;
+        color: #005e59;
+        border-radius: 3px;
+      }
+    title Little URLs
+  body
+    h1 URL Shortener API 
+    h2.
+      Visit path #[code new/] to generate a shortened url.
+    h3 Example:
+    p.
+      Input: #[code #{domainName}new/https://www.google.com]
+    p.
+      Output: #[code {"original_url": "https://www.google.com", "little_url": "#{domainName}Bku7AE_bG"}]
+    br
+    h3 Visiting:
+    p
+      code #{domainName}Bku7AE_bG
+    h3 Redirects to:
+    p
+      code https://www.google.com
